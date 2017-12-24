@@ -1,0 +1,12 @@
+(begin
+  (define (square x) (* x x))
+  (define (sumOfSquares x y)
+    (+ (square x) (square y)))
+  (define (<= a b)
+    (or (< a b) (= a b)))
+  (define (sumOfTwoLargerNumbers a b c)
+    (cond ((and (<= a b) (<= a c)) (sumOfSquares b c))
+	  ((and (<= b a) (<= b c)) (sumOfSquares a c))
+	  (else (sumOfSquares a b))))
+  (display (sumOfTwoLargerNumbers 2 4 4))
+  (newline))

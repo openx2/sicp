@@ -1,0 +1,21 @@
+(begin
+  (define ~ exact->inexact)
+  (define (square x) (* x x))
+  (define (cube x) (* x x x))
+  (define (improve guess x)
+    (/ 
+      (+ (/ x (square guess))
+	(* 2 guess))
+      3))
+  (define (good-enough? improved_guess guess x)
+    ;(< (abs (- (cube guess) x)) 0.001))
+    (< (/ (abs (- improved_guess guess)) guess) 1/100)) ;small fraction test
+  (define (cube-root-iter guess x)
+    (define improved_guess (improve guess x))
+    (if (good-enough? improved_guess guess x)
+      (~ guess)
+      (cube-root-iter improved_guess x)))
+  (define (cube-root x)
+    (cube-root-iter 10 x))
+  (display (cube-root 1000))
+  (newline))
