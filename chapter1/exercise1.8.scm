@@ -5,7 +5,7 @@
   (define (improve guess x)
     (/ 
       (+ (/ x (square guess))
-	(* 2 guess))
+         (* 2 guess))
       3))
   (define (good-enough? improved_guess guess x)
     ;(< (abs (- (cube guess) x)) 0.001))
@@ -17,5 +17,5 @@
       (cube-root-iter improved_guess x)))
   (define (cube-root x)
     (cube-root-iter 10 x))
-  (display (cube-root 1000))
+  (display (cube-root 27))
   (newline))
