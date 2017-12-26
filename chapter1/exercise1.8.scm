@@ -3,7 +3,7 @@
   (define (square x) (* x x))
   (define (cube x) (* x x x))
   (define (improve guess x)
-    (/ 
+    (/
       (+ (/ x (square guess))
          (* 2 guess))
       3))

@@ -10,7 +10,7 @@
     (if (> counter n)
       product
       (iter (* product counter)
-		      (+ counter 1))))
+            (+ counter 1))))
     (iter 1 1))
 
 (begin
