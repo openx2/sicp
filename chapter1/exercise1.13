@@ -1,0 +1,15 @@
+First, prove Fib(n) is (φ^n-ψ^n)/√5, φ = (1+√5)/2, ψ = (1-√5)/2.
+suppose Fib(n) = (φ^n-ψ^n)/√5
+then Fib(n+1) = (φ^(n+1)-ψ^(n+1))/√5 = ((φ^n-ψ^n) + √5*(φ^n+ψ^n))/(2*√5)
+and Fib(n+2) = (φ^(n+2)-ψ^(n+2))/√5 = (3(φ^n-ψ^n) + √5*(φ^n+ψ^n))/(2*√5)
+so Fib(n+2) = (2*(φ^n-ψ^n))/(2*√5) + ((φ^n-ψ^n) + √5*(φ^n+ψ^n))/(2*√5) = Fib(n) + Fib(n+1).
+Also, Fib(0) = (φ^0-ψ^0)/√5 = (1-1)/√5 = 0,
+Fib(1) = (φ^1-ψ^1)/√5 = ((1+√5)/2 - (1-√5)/2)/√5 = 1
+It satisfies the definition of Fibonacci numbers, so Fib(n) = (φ^n-ψ^n)/√5 is true.
+
+Fib(n) = (φ^n-ψ^n)/√5 = φ^n/√5 - ψ^n/√5
+because 1/√5 < 1/2
+and     |ψ| = |(1-√5)/2| < 1
+=>      |ψ^n/√5| < 1/2
+=>      |Fib(n) - φ^n/√5| = |ψ^n/√5| < 1/2
+so Fib(n) is the closest integer to φ^n/√5.

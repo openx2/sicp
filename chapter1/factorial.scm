@@ -4,7 +4,7 @@
 ;    1
 ;    (* n (factorial (- n 1)))))
 
-;linear recursive process
+;linear iterative process
 (define (factorial n)
   (define (iter product counter)
     (if (> counter n)
