@@ -1,0 +1,13 @@
+1. The procedure p is applied 5 times when (sine 12.15) is evaluated.
+(sine 12.15)
+(p (sine 4.05))
+(p (p (sine 1.35)))
+(p (p (p (sine 0.45))))
+(p (p (p (p (sine 0.15)))))
+(p (p (p (p (p (sine 0.05))))))
+(p (p (p (p (p 0.05)))))
+
+2. The number of steps and space used by this process when (sine a) is evaluated is
+(ceiling (/ (log (/ a 0.1))
+            (log 3))).
+In other words we have O(log(x)) order of growth.

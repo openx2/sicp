@@ -1,0 +1,27 @@
+                                                (11,5)
+                                /                                       \
+                            (11,4)                                      (-39,5)
+                        /           \                                       => 0
+                    (11,3)          (-14,4)
+              /                \        => 0
+            (11,2)                  (1,3)
+            /       \                /       \
+        (11,1)          (6,2)       (1,2)     (-9,3)
+        /   \           /   \       /   \       => 0
+    (11,0) (10,1)   (6,1)   (1,2) (1,1) (-4,2)
+        => 0 |      /   \     /  \ => 1     => 0
+            (9,1) (6,0) (5,1)(1,1)(-4,2)
+             |      => 0 |  \   => 1  => 0
+            (8,1)       (5,0) (4.1)
+            ...                 ...
+            => 1                => 1
+
+Analysis of order of growth:
+counter-change space order of growth:
+O(n) because max depth is n
+counter-change time order of growth:
+1. cc(n,1) = O(n)
+2. cc(n,2) = cc(n,1) + cc(n-5,2)
+3. each 2. step is O(n) and there are roughly n/5 such steps
+4. so we have O(n^2)
+5. by analogue we get O(n^k) (k currencies) for cc(n,k)
